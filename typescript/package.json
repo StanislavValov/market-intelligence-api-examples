@@ -1,0 +1,21 @@
+{
+  "name": "market-intelligence-api-examples",
+  "private": true,
+  "type": "module",
+  "description": "Pay-per-call examples for the Market Intelligence API with x402",
+  "scripts": {
+    "quickstart": "tsx src/quickstart.ts",
+    "new-token-bot": "tsx src/new-token-bot.ts",
+    "typecheck": "tsc -p ."
+  },
+  "dependencies": {
+    "@x402/evm": "2.28.0",
+    "@x402/fetch": "2.28.0",
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.4",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
