@@ -57,10 +57,39 @@ It **never trades**: the swap is left as a `TODO` for your own wallet and router
 | `EVERY_MINUTES` | `15` | |
 | `ONCE` | | `1` runs a single round |
 
+## MCP
+
+Two MCP servers (streamable HTTP, no auth; paid tools use x402 or a prepaid-credit key):
+
+| Server | URL | Tools |
+|---|---|---|
+| Core | `https://api.marketintelligenceapi.com/mcp/core` | 15 most used tools, for clients that load few tools |
+| Full | `https://api.marketintelligenceapi.com/mcp` | every route as a tool (72) |
+
+The core profile has `get_decision_lite`, `pre_trade_check`, `find_opportunities`, `get_snapshot`, `explain_move`,
+`check_token_risk`, `find_new_tokens`, `get_swap_quote`, `get_market_summary`, `get_macro_calendar`, `get_symbol_news`,
+`get_fundamentals_batch` and the free `get_decision_sample`, `get_signal_track_record_summary` and `send_feedback`.
+Each paid tool costs the same as its HTTP route.
+
+Client configuration (Claude Desktop, Cursor and other clients that take a remote URL):
+
+```json
+{
+  "mcpServers": {
+    "market-intelligence": {
+      "url": "https://api.marketintelligenceapi.com/mcp/core"
+    }
+  }
+}
+```
+
+A client that cannot sign x402 payments can buy prepaid credit once (`POST /api/v1/credits/buy/5`) and add
+`"headers": {"X-API-Key": "mi_..."}` next to `"url"`. Details: https://api.marketintelligenceapi.com/api/v1/credits
+
 ## More
 
 - [llms.txt](https://api.marketintelligenceapi.com/llms.txt): the guide for agents
 - [OpenAPI](https://api.marketintelligenceapi.com/openapi.json): every route, parameter and price
-- MCP server: `https://api.marketintelligenceapi.com/mcp` (the same routes as tools, paid with x402)
+- MCP servers: `https://api.marketintelligenceapi.com/mcp/core` (15 core tools) and `https://api.marketintelligenceapi.com/mcp` (all tools)
 
 This is not financial advice. New tokens are high risk even when rated LOW_RISK.
