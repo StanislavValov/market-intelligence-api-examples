@@ -66,9 +66,11 @@ Two MCP servers (streamable HTTP, no auth; paid tools use x402 or a prepaid-cred
 | Core | `https://api.marketintelligenceapi.com/mcp/core` | 15 most used tools, for clients that load few tools |
 | Full | `https://api.marketintelligenceapi.com/mcp` | every route as a tool (72) |
 
-The core profile has `get_decision_lite`, `pre_trade_check`, `find_opportunities`, `get_snapshot`, `explain_move`,
-`check_token_risk`, `find_new_tokens`, `get_swap_quote`, `get_market_summary`, `get_macro_calendar`, `get_symbol_news`,
-`get_fundamentals_batch` and the free `get_decision_sample`, `get_signal_track_record_summary` and `send_feedback`.
+The core profile names its tools in dot notation: `decision.lite`, `decision.pre_trade`, `market.opportunities`,
+`market.snapshot`, `market.explain_move`, `market.summary`, `token.risk`, `token.new_launches`, `token.swap_quote`,
+`macro.calendar`, `news.symbol`, `stocks.fundamentals` and the free `decision.sample`, `signals.track_record` and `feedback.send`
+(the `/mcp` names such as `get_decision_lite` work too). Prompts: `should_i_trade`, `check_token_before_buying`,
+`market_briefing`, `explain_symbol_move`.
 Each paid tool costs the same as its HTTP route.
 
 Client configuration (Claude Desktop, Cursor and other clients that take a remote URL):
