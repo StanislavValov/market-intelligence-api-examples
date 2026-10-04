@@ -2,6 +2,7 @@
 
 [![smithery badge](https://smithery.ai/badge/hisazzul/market-intelligence-core)](https://smithery.ai/servers/hisazzul/market-intelligence-core)
 [![smithery badge](https://smithery.ai/badge/hisazzul/market-intelligence-api)](https://smithery.ai/servers/hisazzul/market-intelligence-api)
+[![M8ven Verified](https://m8ven.ai/badge/mcp/stanislavvalov-market-intelligence-api-examples-1lf8b8?variant=verified)](https://m8ven.ai/mcp/stanislavvalov-market-intelligence-api-examples-1lf8b8?s=readme)
 
 Runnable examples for [Market Intelligence API](https://api.marketintelligenceapi.com), a pay-per-call API for AI agents:
 on-chain order flow, one-call trading decisions, new-token risk checks, swap quotes, perps, macro calendar, SEC filings and more.
